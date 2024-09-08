@@ -6,15 +6,31 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        "primary-muted": "var(--color-primary-muted)",
+        "secondary-muted": "var(--color-secondary-muted)",
+        light: {
+          primary: "var(--color-light-primary)",
+          secondary: "var(--color-light-secondary)",
+          muted: "var(--color-light-muted)",
+        },
+        dark: {
+          primary: "var(--color-dark-primary)",
+          secondary: "var(--color-dark-secondary)",
+          muted: "var(--color-dark-muted)",
+        },
+      },
+      animation: {
+        "fade-up": "fade-up 0.5s 0.1s forwards",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
