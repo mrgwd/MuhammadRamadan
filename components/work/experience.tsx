@@ -6,6 +6,7 @@ interface ExperienceProps {
   summary: string;
   achievements: string[];
   closing?: string;
+  // fadeOrder: number;
 }
 export default function Experience({
   name,
@@ -15,9 +16,10 @@ export default function Experience({
   summary,
   achievements,
   closing,
+  // fadeOrder,
 }: ExperienceProps): JSX.Element {
   return (
-    <section className="animate-fade-up border-b border-light-secondary opacity-0 delay-150 animation-delay-300 dark:border-dark-muted">
+    <>
       <div>
         <p className="text-lg font-medium">{name}</p>
         <p className="text-dark-muted dark:text-light-muted">
@@ -31,6 +33,6 @@ export default function Experience({
         ))}
       </ul>
       {closing && <p>{closing}</p>}
-    </section>
+    </>
   );
 }
