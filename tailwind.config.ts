@@ -27,7 +27,8 @@ const config: Config = {
         },
       },
       animation: {
-        "fade-up": "fade-up 0.5s 0.1s forwards",
+        "fade-down": "fade-down 0.5s 0.1s forwards",
+        fade: "fade 0.5s 0.1s forwards",
       },
     },
   },
