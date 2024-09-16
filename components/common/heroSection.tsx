@@ -5,7 +5,7 @@ interface Props {
 }
 export default function HeroSection({ title, description, children }: Props) {
   return (
-    <section className="border border-light-secondary dark:border-dark-muted">
+    <section className="border">
       <h1>{title}</h1>
       <p>{description}</p>
       {children}
