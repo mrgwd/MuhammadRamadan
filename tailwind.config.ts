@@ -7,7 +7,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
+  darkMode: "media",
   theme: {
     extend: {
       colors: {
@@ -28,7 +28,12 @@ const config: Config = {
       },
       animation: {
         "fade-down": "fade-down 0.5s 0.1s forwards",
-        fade: "fade 0.5s 0.1s forwards",
+        fade: "fade 0.3s 0.1s forwards",
+      },
+      gridTemplateColumns(utils) {
+        return {
+          "16": "repeat(16, minmax(0, 1fr))",
+        };
       },
     },
   },
