@@ -1,16 +1,16 @@
 import HeroSection from "@/components/common/heroSection";
-import BlogHeroSection from "./blogHeroSection";
-import Posts from "./posts";
+import Articles from "./articles";
 
 export default function Blog() {
   return (
-    <main className="text-dark-primary dark:text-light-primary">
-      <HeroSection
-        title="blog"
-        description="Thoughts, sories and tutorials about programming, web development and
-        life."
-      />
-      <Posts />
+    <main className="text-dark-secondary dark:text-light-secondary">
+      <HeroSection title="read my blog">
+        <p>
+          Tutorials, stories and Thoughts about programming, web development and
+          life.
+        </p>
+      </HeroSection>
+      <Articles />
     </main>
   );
 }
