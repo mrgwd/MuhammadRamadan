@@ -1,37 +1,35 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import MDXRenderer from "@/components/MSXRenderer";
-import { formateDate } from "@/utils/formateDate";
+import { getMDXComponent } from "mdx-bundler/client";
+import { getMdxSource } from "@/lib/mdx";
+import { notFound } from "next/navigation";
+import Header from "@/components/blog/header";
+// import HeadingWithAnchor from "@/components/mdx/headingWithAnchor";
 
-export default async function BlogPostPage({
+export default async function ArticlePage({
   params,
 }: {
   params: { slug: string };
 }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), `content/blog/${slug}.mdx`);
-  const fileContents = fs.readFileSync(filePath, "utf8");
+  const post = await getMdxSource(slug);
 
-  const { data, content } = matter(fileContents);
-  const mdxSource = await serialize(content);
+  if (!post) {
+    notFound();
+  }
 
-  const date = formateDate(data.createdAt);
+  const { code, frontMatter } = post;
+  const Component = getMDXComponent(code);
+
+  // const components = {
+  //   h2: (props: any) => <HeadingWithAnchor id={props.children} {...props} />,
+  // };
 
   return (
-    <>
-      <section className="space-y-0 border">
-        <h1>{data.title}</h1>
-        <div className="flex gap-2 text-dark-muted dark:text-light-muted">
-          <p>{date}</p>
-          <span>-</span>
-          <p>{data.tags}</p>
-        </div>
-      </section>
-      <article className="border border-t-0">
-        <MDXRenderer source={mdxSource} />
+    <main className="article">
+      <Header title={frontMatter.title} createdAt={frontMatter.createdAt} />
+      <article data-fade-2>
+        <Component /*components={{ components }}*/ />{" "}
       </article>
-    </>
+      {/* Render MDX */}
+    </main>
   );
 }
