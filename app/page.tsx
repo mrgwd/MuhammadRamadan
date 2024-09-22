@@ -8,10 +8,10 @@ import ExternalLink from "@/components/home/externalLink";
 
 export default function Home(): JSX.Element {
   return (
-    <main className="text-dark-primary dark:text-light-secondary">
+    <main className="text-dark-secondary dark:text-light-secondary">
       <HeroSection title="hey, I'm Muhammad 👋">
         <p>
-          I am a Frontend Engineer, I{" "}
+          I am a Frontend Developer, I{" "}
           <Link href="/work" className="link">
             work
           </Link>{" "}
@@ -24,7 +24,10 @@ export default function Home(): JSX.Element {
           and Next.js.
         </p>
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-light-muted">
-          <ExternalLink href="./assets/resume.pdf" handle="Resume">
+          <ExternalLink
+            href="https://drive.google.com/file/d/1k7azHctUOPUasLjwg70TyzHqgGRjTLs8/view?pli=1"
+            handle="Resume"
+          >
             <PaperClip className="size-5 stroke-dark-muted group-hover:stroke-dark-primary dark:stroke-light-muted dark:group-hover:stroke-light-primary" />
           </ExternalLink>
 
