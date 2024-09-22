@@ -2,32 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  :root {
+    --color-primary: #7f00ff;
+    --color-secondary: #cb9f49;
+    --color-primary-muted: #7e6aff;
+    --color-secondary-muted: #f7e9b7;
+    --color-light-primary: #ffffff;
+    --color-light-secondary: #d4d4d4;
+    --color-light-muted: #929292;
+    --color-dark-primary: #171717;
+    --color-dark-secondary: #333333;
+    --color-dark-muted: #888888;
+  }
+}
+hr {
+  @apply border-light-secondary dark:border-dark-secondary;
+}
+li::marker {
+  @apply text-[#bbb] text-dark-muted dark:text-[#666];
+}
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-light-secondary dark:bg-dark-secondary;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-light-muted dark:bg-dark-muted;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url(../public/background.png);
+  @apply layout;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.layout {
+  @apply mx-auto w-11/12 max-w-screen-sm;
+}
+
+h1 {
+  @apply mb-2 text-2xl font-medium text-dark-primary dark:text-light-primary;
+}
+
+.cursor-link {
+  @apply cursor-[url(../public/cursors/link.svg),auto];
+}
+
+section {
+  @apply mb-10 mt-2 space-y-4;
+}
+
+.link {
+  @apply font-semibold text-dark-primary underline decoration-light-muted decoration-dotted decoration-1 underline-offset-2 transition-all hover:decoration-dark-primary hover:decoration-solid dark:text-light-primary dark:hover:decoration-light-primary;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
   }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero {
+  @apply animate-fade opacity-0;
+}
+
+[data-fade-1] {
+  @apply animate-fade-down opacity-0 animation-delay-100;
+}
+[data-fade-2] {
+  @apply animate-fade-down opacity-0 animation-delay-200;
+}
+[data-fade-3] {
+  @apply animate-fade-down opacity-0 animation-delay-300;
+}
+[data-fade-4] {
+  @apply animate-fade-down opacity-0 animation-delay-[400ms];
 }
