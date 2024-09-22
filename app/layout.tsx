@@ -18,7 +18,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" dir="ltr" className="dark">
+    <html lang="en" dir="ltr" className="scroll-smooth">
       <body
         className={`${karla.className} scrollbar bg-light-primary dark:bg-dark-primary`}
       >
