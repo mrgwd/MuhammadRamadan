@@ -6,7 +6,6 @@ interface ExperienceProps {
   summary: string;
   achievements: string[];
   closing?: string;
-  // fadeOrder: number;
 }
 export default function Experience({
   name,
@@ -16,18 +15,17 @@ export default function Experience({
   summary,
   achievements,
   closing,
-  // fadeOrder,
 }: ExperienceProps): JSX.Element {
   return (
     <>
       <div>
-        <p className="text-lg font-medium">{name}</p>
+        <h2 className="text-lg font-medium">{name}</h2>
         <p className="text-dark-muted dark:text-light-muted">
           {role} • {dateFrom} — {dateTo}
         </p>
       </div>
       <p>{summary}</p>
-      <ul className="ml-6 list-disc">
+      <ul className="ml-6 list-disc marker:text-dark-muted dark:marker:text-light-muted">
         {achievements.map((achievement, index) => (
           <li key={index}>{achievement}</li>
         ))}
