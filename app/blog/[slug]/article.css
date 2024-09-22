@@ -1,0 +1,27 @@
+.article {
+  @apply text-dark-primary dark:text-light-primary;
+  h2 {
+    @apply mb-3 mt-8 scroll-mt-5 text-xl;
+  }
+  h3 {
+    @apply mb-1 mt-4 scroll-mt-5 text-lg;
+  }
+  h2:hover,
+  h3:hover {
+    span.icon-link::before {
+      @apply opacity-100;
+    }
+  }
+  p {
+    @apply mb-2 text-dark-secondary dark:text-light-secondary;
+  }
+  ul {
+    @apply list-disc space-y-2 pl-4;
+  }
+  img {
+    @apply w-full rounded object-cover;
+  }
+  span.icon-link::before {
+    @apply absolute -translate-x-4 text-xl opacity-25 transition-all content-['#'];
+  }
+}
