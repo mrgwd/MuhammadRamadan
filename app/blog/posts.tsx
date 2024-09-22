@@ -1,36 +1,16 @@
-import fs from "fs";
 import Card from "@/components/common/card";
-import { createADMINClient } from "@/utils/supabase/server";
-import path from "path";
-import matter from "gray-matter";
+import { getAllMdxFiles } from "@/lib/mdx";
 
-export default async function articles() {
-  // const supabase = createADMINClient();
-  // const { data: articles, error } = await supabase.from("articles").select("*");
-  // console.log(articles, error);
-
-  const articlesDirectory = path.join(process.cwd(), "content/blog");
-  const filenames = fs.readdirSync(articlesDirectory);
-
-  const articles = filenames.map((filename) => {
-    const filePath = path.join(articlesDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContents);
-
-    return {
-      filename: filename.replace(/\.mdx$/, ""), // Remove .mdx extension
-      data: data,
-    };
-  });
+export default async function Posts() {
+  const posts = await getAllMdxFiles();
   return (
-    <section className="border border-t-0" data-fade-2>
-      {articles.map((post) => (
+    <section data-fade-2>
+      {posts.map((post) => (
         <Card
-          key={post.filename}
-          title={post.filename}
-          content="content"
+          key={post.slug}
+          title={post.data.title}
           date={post.data.createdAt}
-          href={post.filename}
+          href={post.slug}
         />
       ))}
     </section>
