@@ -1,5 +1,5 @@
 import HeroSection from "@/components/common/heroSection";
-import Articles from "./articles";
+import Posts from "./posts";
 
 export default function Blog() {
   return (
@@ -10,7 +10,7 @@ export default function Blog() {
           life.
         </p>
       </HeroSection>
-      <Articles />
+      <Posts />
     </main>
   );
 }
