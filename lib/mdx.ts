@@ -11,7 +11,7 @@ if (process.platform === "win32") {
     process.cwd(),
     "node_modules",
     "esbuild",
-    "esbuild.exe"
+    "esbuild.exe",
   );
 } else {
   process.env.ESBUILD_BINARY_PATH = path.join(
@@ -19,24 +19,34 @@ if (process.platform === "win32") {
     "node_modules",
     "esbuild",
     "bin",
-    "esbuild"
+    "esbuild",
   );
 }
 
 export async function getMdxSource(slug: string) {
-  const filePath = path.join(process.cwd(), "content/blog", `${slug}.mdx`);
-  const source = fs.readFileSync(filePath, "utf8");
+  const postsDirectory = path.join(
+    process.cwd(),
+    "content/blog",
+    `${slug}.mdx`,
+  );
+  const source = fs.readFileSync(postsDirectory, "utf8");
 
   const { content, data } = matter(source);
 
   const { code } = await bundleMDX({
     source: content,
-    cwd: path.dirname(filePath),
+    cwd: path.dirname(postsDirectory),
     mdxOptions(options) {
       options.rehypePlugins = [
         ...(options.rehypePlugins || []),
         rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "prepend",
+            properties: { className: "anchor" },
+          },
+        ],
       ];
       options.remarkPlugins = [...(options.remarkPlugins || []), remarkGfm];
       return options;
@@ -47,4 +57,19 @@ export async function getMdxSource(slug: string) {
     code,
     frontMatter: data,
   };
+}
+
+export async function getAllMdxFiles() {
+  const postsDirectory = path.join(process.cwd(), "content/blog");
+  const filenames = await fs.promises.readdir(postsDirectory);
+
+  const posts = await Promise.all(
+    filenames.map((file) => {
+      const slug = file.replace(/\.mdx$/, "");
+      const source = fs.readFileSync(path.join(postsDirectory, file), "utf8");
+      const { data } = matter(source);
+      return { data, slug };
+    }),
+  );
+  return posts;
 }
