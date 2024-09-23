@@ -17,7 +17,7 @@ export default function ExternalLink({
     <Link
       target={props.target || "_blank"}
       href={href}
-      className={`cursor-link group flex items-center gap-2 hover:text-dark-muted dark:hover:text-light-primary ${children ? "*:transition-all" : "transition-all"} ${props.className || ""}`}
+      className={`cursor-link group flex items-center gap-2 text-dark-muted hover:text-dark-primary dark:text-light-muted dark:hover:text-light-primary ${children ? "*:transition-all" : "transition-all"} ${props.className || ""}`}
     >
       {children ? (
         <>
