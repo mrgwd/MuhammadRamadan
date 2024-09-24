@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  background-image: url(../public/background.png);
+  background-image: url(../public/static/images/background.png);
   @apply layout;
 }
 
@@ -54,7 +54,7 @@ h1 {
 }
 
 .cursor-link {
-  @apply cursor-[url(../public/cursors/link.svg),auto];
+  @apply cursor-[url(../public/static/svg/cursors/link.svg),auto];
 }
 
 section {
