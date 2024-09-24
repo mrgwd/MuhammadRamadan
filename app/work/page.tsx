@@ -1,5 +1,24 @@
 import HeroSection from "@/components/common/heroSection";
 import Experiences from "@/components/work/experiences";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "Explore my professional journey, including my work experience, projects, and accomplishments.",
+  keywords: [
+    "work",
+    "experience",
+    "professional",
+    "career",
+    "projects",
+    "accomplishments",
+    "Frontend Developer",
+    "React",
+    "Next.js",
+    "Web Development",
+  ],
+};
 
 export default function Work(): JSX.Element {
   return (
