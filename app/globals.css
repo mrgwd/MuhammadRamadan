@@ -16,12 +16,15 @@
     --color-dark-muted: #888888;
   }
 }
+
 hr {
   @apply border-light-secondary dark:border-dark-secondary;
 }
+
 li::marker {
-  @apply text-[#bbb] text-dark-muted dark:text-[#666];
+  @apply text-[#bbb] dark:text-[#666];
 }
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     @apply w-2;
@@ -41,8 +44,7 @@ html {
 }
 
 body {
-  background-image: url(../public/static/images/background.png);
-  @apply layout;
+  @apply layout bg-[url(../public/static/images/background.png)];
 }
 
 .layout {
@@ -72,7 +74,7 @@ section {
   }
   100% {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 
@@ -89,15 +91,25 @@ section {
   @apply animate-fade opacity-0;
 }
 
-[data-fade-1] {
-  @apply animate-fade-down opacity-0 animation-delay-100;
-}
-[data-fade-2] {
-  @apply animate-fade-down opacity-0 animation-delay-200;
-}
-[data-fade-3] {
-  @apply animate-fade-down opacity-0 animation-delay-300;
-}
+[data-fade-1],
+[data-fade-2],
+[data-fade-3],
 [data-fade-4] {
-  @apply animate-fade-down opacity-0 animation-delay-[400ms];
+  @apply animate-fade-down opacity-0;
+}
+
+[data-fade-1] {
+  animation-delay: 100ms;
+}
+
+[data-fade-2] {
+  animation-delay: 200ms;
+}
+
+[data-fade-3] {
+  animation-delay: 300ms;
+}
+
+[data-fade-4] {
+  animation-delay: 400ms;
 }
