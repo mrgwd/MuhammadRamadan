@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+ # <img src="https://github.com/user-attachments/assets/7a394fe2-4fcb-4d44-9e2b-21c14676607e" alt="Logo" width="25" height="25"> mohamedr.vercel.app
+
+
+![image](https://github.com/user-attachments/assets/7cd886a0-d55e-45b8-8cd9-3ef65553cad2)
+
+Welcome to my personal portfolio repository! I'm Muhammad Ramadan, a Frontend Engineer passionate about creating minimal and effective web experiences.
+
+## 🌐 Live Website
+
+Visit my portfolio at [https://mohamedr.vercel.app](https://mohamedr.vercel.app)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MDX Bundler](https://github.com/kentcdodds/mdx-bundler)
+
+## Sections
+
+The portfolio website consists of three main sections:
+
+1. **Home**: An introduction to who I am and what I do.
+2. **Work**: Showcases my professional experiences.
+3. **Blog**: A collection of my thoughts and insights on development and related topics.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```
+   git clone https://github.com/mrgwd/muhammadramadan.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd muhammadramadan
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Run the development server:
+   ```
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is open-source and contributions are welcome. Feel free to open issues or submit pull requests.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📫 Contact
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- linkedin: [Muhammad Ramadan](https://linkedin.com/in/mrgwd)
+- email: [mogdwd@gmail.com](mailto:mogdwd@gmail.com)
