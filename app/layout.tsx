@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
 import opengraphImage from "@/public/static/images/opengraph-image.png";
+import { Analytics } from "@vercel/analytics/react";
 
 const karla = Karla({ subsets: ["latin"] });
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     default: "Muhammad Ramadan",
   },
   description:
-    "Frontend Developer and UI UX Designer, I work with the React ecosystem. I design and develop responsive and user-friendly user interfaces. I share my thoughts often to teach people about web development, JS, TS, React and Next.js.",
+    "I am a Frontend Engineer, I work with the React ecosystem. I design and develop responsive and user-friendly user interfaces. I share my thoughts often to teach people about web development, JS, TS, React and Next.js.",
   keywords: [
     "Muhammad Ramadan",
     "Frontend Developer",
@@ -28,12 +29,11 @@ export const metadata: Metadata = {
     "Mansoura",
     "Dakahlia",
     "UI Engineer",
+    "UI/UX",
+    "UI Developer",
     "Frontend Engineer",
   ],
   openGraph: {
-    title: "Muhammad Ramadan",
-    description:
-      "Frontend Developer and UI UX Designer, I work with the React ecosystem. I design and develop responsive and user-friendly user interfaces. I share my thoughts often to teach people about web development, JS, TS, React and Next.js.",
     images: {
       url: opengraphImage.src,
       alt: "Opengraph Image of Muhammad Ramadan",
@@ -54,6 +54,7 @@ export default function LocaleLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
