@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Explore my professional journey, including my work experience, projects, and accomplishments.",
+    "I started my professional career as a Frontend Developer recently. I have worked on projects and collaborated with awesome teams and people that have helped me grow as a developer and as a person. Here's a summary of my work so far.",
   keywords: [
     "work",
     "experience",
@@ -25,9 +25,11 @@ export default function Work(): JSX.Element {
     <div className="text-dark-secondary dark:text-light-secondary">
       <HeroSection title="my work">
         <p>
-          I have been working as a Frontend Developer for the past recent years.
-          I have worked on projects that have helped me grow as an developer and
-          as a person. Here&apos;s a summary of my work so far.
+          I started my professional career as a{" "}
+          <strong>Frontend Developer</strong> recently. I have worked on
+          projects and collaborated with awesome teams and people that have
+          helped me grow as a developer and as a person. Here&apos;s a summary
+          of my work so far.
         </p>
       </HeroSection>
       <Experiences />
