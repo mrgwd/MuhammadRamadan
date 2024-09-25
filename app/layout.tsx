@@ -5,6 +5,7 @@ import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
 import opengraphImage from "@/public/static/images/opengraph-image.png";
 import { Analytics } from "@vercel/analytics/react";
+import ConsoleBanner from "@/components/consoleBanner";
 
 const karla = Karla({ subsets: ["latin"] });
 
@@ -54,6 +55,7 @@ export default function LocaleLayout({
         <Navbar />
         {children}
         <Footer />
+        <ConsoleBanner />
         <Analytics />
       </body>
     </html>
